@@ -64,14 +64,11 @@ function displayBooks() {
 }
 displayBooks();
 
-// const button = document.querySelector('#btn');
+const button = document.querySelector('#btn');
+const form = document.querySelector('#form1');
 
-// button.addEventListener('click', showform = () => {
-//     const form = document.createElement('#form1');
-//     form.textContent = "#form1"
-
-
-
-// })
+button.addEventListener('click', showform = () => {
+   form.style.display = 'block'
+})
 
 
