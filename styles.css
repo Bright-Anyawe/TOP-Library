@@ -3,6 +3,35 @@
     padding: 0;
 }
 
+main {
+    display: block;
+    text-align: center;
+}
+
+#btn {
+    background-color: #facc15;
+    color: black;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+#btn:hover {
+    background-color: #facc15;
+    color: white;
+}
+
+#btn:active {
+    background-color: white;
+    color: #facc15;
+}
+
+section {
+    border: 1px solid #a3e635;
+    width: 400px;
+}
+
 th, td {
     border: 1px solid black;
 }

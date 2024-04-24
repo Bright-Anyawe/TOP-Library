@@ -10,22 +10,36 @@
 </head>
 
 <body>
-    <button id="btn">ADD NEW BOOK</button>
-    <form id="form1" action="">
-        <!-- <label for="book-title">Enter The Title Of Your Book</label> -->
-        <Input type="text" id="book-title" name="Book-Title" placeholder="Enter The Title Of Your Book"> <br>
+    <main>
+        <section>
+            <button id="btn">ADD NEW BOOK</button>
+            <form id="form1" action="">
+                <label for="book-title">Enter The Title Of Your Book</label>
+                <Input type="text" id="book-title" data-titleBook="titleBook" name="Book-Title" placeholder="Title"> <br>
 
-            <!-- <label for="Author">Enter The Name Of The Author</label> -->
-            <input type="text" id="Author" name="Book-Author" placeholder="Enter The Name Of The Author"> <br>
+                <label for="Author">Enter The Name Of The Author</label>
+                <input type="text" id="Author" data-author="author" name="Book-Author" placeholder="Author"> <br>
 
-            <!-- <label for="book-page">Enter The Pages Of The Book</label> -->
-            <input type="number" id="book-page" placeholder="Enter The Pages Of The Book, 0" name="Book-Page"> <br>
-    </form>
-    <div id="displayResult">
-        <table>
-         
+                <label for="book-page">Enter The Pages Of The Book</label>
+                <input type="number" id="book-page" data-page="page" name="Book-Page" placeholder="Pages"> <br>
+
+                
+                <label for="read">Have you started reading?</label>
+                <input type="text" data-read="read" name="readOption" id="read" placeholder="Yes! or No!"> <br>
+
+                <label for="read">Enter Reached Page number?</label>
+                <input type="number" data-read="read" name="readOption" id="read" placeholder="0"> <br>
+
+                <input type="submit" id="submit">
+                <button type="Remove" id="remove-book">Delete Book</button>
+            </form>
+        </section>
+
+        <table id="book-table">
+
         </table>
-    </div>
+
+    </main>
 </body>
 
 </html>

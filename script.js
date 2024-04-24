@@ -1,74 +1,93 @@
 let myLibrary = [];
+const button = document.querySelector('#btn');
+const form = document.querySelector('#form1');
+const submit = document.querySelector('#submit');
+const table = document.querySelector('table');
+const headerRow = document.createElement('tr')
+const headers = ['Title', 'Author', 'Page', 'Read'];
 
-Object.setPrototypeOf(displayBooks.prototype, addLibraryBook.prototype);
 
 function Book(title, author, page, read) {
     this.title = title;
     this.author = author;
     this.page = page;
     this.read = read;
-    // this.reportInfo = function () {
-    //     return `The ${this.title} by ${this.author}, ${this.page} pages, not read yet and ${this.read} pages read.`
-    // }
 }
 
-function addLibraryBook() {
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+})
 
-    const book1 = new Book(' Power Of Your Subconcious Mind', 'Joseph Murphy', '700', "20");
-    const book2 = new Book(' Power Of Self Displine', 'Brain Tracy', '1000', "30");
+button.addEventListener('click', showform = () => {
+    form.style.display = 'block'
+});
 
-    // const userBook = new Book(`${prompt('Write the title of the book')}`,
-    //     `${prompt("Write the author's name")}`, `${prompt('How many pages is left to cover')}`,
-    //     `${prompt("How many pages have you read?")}`);
-    // myLibrary.push(userBook);
-    myLibrary.push(book1, book2);
-    // myLibrary.push(book2);
-    //   console.table(userBook);
-    //   console.log(userBook.reportInfo());   
-    console.table(myLibrary);
+headers.forEach(headerText => {
+    let header = document.createElement('th');
+    let textNode = document.createTextNode(headerText);
+    header.appendChild(textNode);
+headerRow.appendChild(header);
+})
+
+
+const addLibraryBook = () => {
+
+    const title = document.querySelector('#book-title').value;
+    const author = document.querySelector('#Author').value;
+    const page = document.querySelector('#book-page').value;
+    const pageRead = document.querySelector('#read').value;
+    
+    const userBooks = new Book(`${title}`, `${author}`, `${page}`, `${pageRead}`);
+
+    myLibrary.push(userBooks);
+    document.querySelector('form').reset();
+    displayBooks();
+
 }
-addLibraryBook();
 
-function displayBooks() {
-    const table = document.querySelector('table');
-    const headerRow = document.createElement('tr')
-    const headers = ['Title', 'Author', 'Page', 'Read'];
-
-    headers.forEach(headerText => {
-        let header = document.createElement('th');
-        let textNode = document.createTextNode(headerText);
-        header.appendChild(textNode)
-        headerRow.appendChild(header)
-    })
-
-    table.appendChild(headerRow)
+const clearBookDisplay = () => {
+    const table = document.querySelector('#book-table');
+    while (table.lastChild) {
+        table.removeChild(table.lastChild);
+    }
+};
 
 
+const displayBooks = () => {
 
-    myLibrary.forEach((book) => {
+    clearBookDisplay();
+    table.appendChild(headerRow);
+
+    myLibrary.forEach((book, index) => {
         let row = document.createElement('tr');
 
         Object.values(book).forEach(text => {
             let cell = document.createElement('td');
-            cell.textContent = text
+            cell.textContent = text;
             row.appendChild(cell);
+            
         });
-        table.appendChild(row)
 
+        let removeButton = document.createElement('button');
+        removeButton.textContent = "Remove";
+        removeButton.addEventListener('click', () => removeButton(index));
 
-        // alert(JSON.stringify(book));
-        // display.textContent += JSON.stringify(book)
+        let removeCell = document.createElement('td');
+        removeCell.appendChild(removeButton);
+        row.appendChild(removeCell);
+        table.appendChild(row);
 
     })
-
+    
 }
-displayBooks();
 
-const button = document.querySelector('#btn');
-const form = document.querySelector('#form1');
+submit.addEventListener('click', addLibraryBook);
 
-button.addEventListener('click', showform = () => {
-   form.style.display = 'block'
-})
+
+
+
+
+
+
 
 
