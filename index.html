@@ -11,8 +11,11 @@
 
 <body>
     <main>
+        
+
         <section>
-            <button id="btn">ADD NEW BOOK</button>
+            <button id="btn">CLICK!🦾 TO ADD YOUR BOOK TO THE LIBRARY 📕📖📙 </button>
+         <div id="form-container">
             <form id="form1" action="">
                 <label for="book-title">Enter The Title Of Your Book</label>
                 <Input type="text" id="book-title" data-titleBook="titleBook" name="Book-Title" placeholder="Title"> <br>
@@ -27,17 +30,23 @@
                 <label for="read">Have you started reading?</label>
                 <input type="text" data-read="read" name="readOption" id="read" placeholder="Yes! or No!"> <br>
 
-                <label for="read">Enter Reached Page number?</label>
-                <input type="number" data-read="read" name="readOption" id="read" placeholder="0"> <br>
+
+                <div id="container">
+
+                </div>
+                
 
                 <input type="submit" id="submit">
-                <button type="Remove" id="remove-book">Delete Book</button>
+                <!-- <button type="submit" id="submit">Submit</button> -->
+                
             </form>
+         </div>
         </section>
 
         <table id="book-table">
 
         </table>
+       
 
     </main>
 </body>

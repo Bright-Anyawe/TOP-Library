@@ -1,10 +1,23 @@
+@font-face {
+    font-family: "Roboto", Verdana;
+    src: url(fonts/Roboto-Medium.ttf);
+}
+
+
 * {
     margin: 0;
     padding: 0;
+
+    
 }
 
+body {
+    
+    background-image: linear-gradient(to right, rgb(41, 51, 109), rgb(193, 240, 150));
+}
+
+
 main {
-    display: block;
     text-align: center;
 }
 
@@ -13,29 +26,96 @@ main {
     color: black;
     border: 0;
     border-radius: 10px;
-    padding: 10px 20px;
+    width: 1fr;
+    height: 1fr;
     font-weight: 600;
+    /* flex: 1; */
+    position: relative;
+    top: 10px;
+    left: 3.3rem;
+    padding: 20px 20px;
 }
 
 #btn:hover {
     background-color: #facc15;
     color: white;
+    -webkit-transform: scale(1.01);
 }
 
 #btn:active {
-    background-color: white;
-    color: #facc15;
+    background-color: #61dde6;
+    color: white;
 }
 
-section {
-    border: 1px solid #a3e635;
-    width: 400px;
-}
 
-th, td {
-    border: 1px solid black;
+#form-container {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    bottom: 50px;
+
 }
 
 #form1 {
+    padding: 10px;
+    border: 2px solid yellow;
+    border-radius: 10px;
+    width: 350px;
     display: none;
+    background-color: #61dde6;
+    height: 600px;
+
+}
+
+label {
+    display: flex;
+    font-size: 20px;
+    font-weight: 550;
+    font-family: Times, serif;
+}
+
+input {
+    display: flex;
+    height: 20px;
+    width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+
+
+#submit {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    height: 40px;
+    width: 325px;
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 8px;
+    background-color: #fdf367;
+}
+
+
+th, td {
+    border: 2px solid rgb(112, 108, 108);
+    font-size: 20px;
+}
+
+table {
+    position: relative;
+    bottom: 42rem;
+    border: 5px solid rgb(224, 205, 32);
+    border-radius: 10px;
+    background-color: #61dde6;
+    color: rgb(12, 10, 10);
+    font-weight: 600;
+}
+
+table button {
+    color: red;
+    padding: 9px;
 }
